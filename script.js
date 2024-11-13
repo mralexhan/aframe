@@ -9,8 +9,8 @@ window.onload = () => {
             // Add a box to the north of the initial GPS position
             const entity = document.createElement('a-entity');
             entity.setAttribute('gltf-model', '#object');
-            entity.setAttribute('scale', '5 5 5');
-            entity.setAttribute('rotation', '0 0 0');
+            entity.setAttribute('scale', '25 25 25');
+            entity.setAttribute('rotation', '0 90 0');
             entity.setAttribute('position', '0 0.4 0');
             entity.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude + 0.001,
