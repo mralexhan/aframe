@@ -11,7 +11,7 @@ window.onload = () => {
             entity.setAttribute('gltf-model', '#object');
             entity.setAttribute('scale', '25 25 25');
             entity.setAttribute('rotation', '0 90 0');
-            entity.setAttribute('position', '0 -25 0');
+            entity.setAttribute('position', '1.1 -0.5 -5');
             entity.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude + 0.005,
                 longitude: e.detail.position.longitude
