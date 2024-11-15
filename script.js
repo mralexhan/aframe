@@ -1,4 +1,4 @@
-window.onload = () => {
+/* window.onload = () => {
     let testEntityAdded = false;
 
     const el = document.querySelector("[gps-new-camera]");
@@ -26,4 +26,4 @@ window.onload = () => {
         }
         testEntityAdded = true;
     });
-};
+}; */
