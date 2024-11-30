@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,56 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
-    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+    <script type='text/javascript'
+        src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
+    <script type='text/javascript'
+        src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+    <script type='module' src='dist/bundle.js'></script>
 </head>
+
 <body style="margin: 0; overflow: hidden;">
 
-    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-        
-        <!--set maxDistance (in meters) to how far users should be until they see the object-->
-        <a-camera gps-camera='gpsMinDistance: 0.01; maxDistance: 10'></a-camera>
+    <a-scene>
+    <!--<a-scene vr-mode-ui="enabled: false" arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'>-->
 
         <!--change src destination to the object file of what you want to show on screen-->
         <a-asset-item id="obsv" src="AR/Memory Market/flower_obervatory_small.glb"></a-asset-item>
         <a-asset-item id="boat" src="AR/Memory Market/boat_small.glb"></a-asset-item>
         <a-asset-item id="mcd" src="AR/Memory Market/mcdonalds.glb"></a-asset-item>
         <a-asset-item id="seamen" src="AR/Memory Market/seamenclub_small.glb"></a-asset-item>
+        <a-asset-item id="post" src="AR/Memory Market/postoff.glb"></a-asset-item>
+
+
+        
+        <!--This is the fixed object version (where the object would not move at all and always stay on screen)-->
+        <a-camera>
+            <a-entity gltf-model="#obsv" scale="0.23 0.23 0.23" rotation="0 90 0" position="0.35 -1.3 -5"></a-entity>
+            <!--<a-entity gltf-model="#boat" scale="1.5 1.5 1.5" rotation="0 45 0" position="0.35 -1.3 -5"></a-entity>-->
+            <!--<a-entity gltf-model="#mcd" scale="1 1 1" rotation="0 -30 0" position="-2 -2 -6.2"></a-entity>-->
+            <!--<a-entity gltf-model="#seamen" scale="0.5 0.5 0.5" rotation="0 -90 0" position="0 -6.3 -12"></a-entity>-->
+            <!--<a-entity gltf-model="#post" scale="0.5 0.5 0.5" rotation="0 -90 0" position="-5 -6.3 -20"></a-entity>-->
+        </a-camera>
 
 
 
-        <!--insert latitude and longitude of the position you want the object to be in-->
-        <a-entity gltf-model="#obsv" scale="15 15 15" rotation="0 90 0" position="0 -1 -1" gps-entity-place="latitude: 25.127752; longitude: 121.752609"></a-entity>
-        <a-entity gltf-model="#boat" scale="15 15 15" rotation="0 90 0" position="0 -1 -1" gps-entity-place="latitude: 25.128476; longitude: 121.752692"></a-entity>
-        <a-entity gltf-model="#mcd" scale="10 10 10" rotation="0 0 0" position="0 -1 -1" gps-entity-place="latitude: 25.128034; longitude: 121.750991"></a-entity>
-        <a-entity gltf-model="#seamen" scale="5 5 5" rotation="0 0 0" position="0 -1 -1" gps-entity-place="latitude: 25.127815; longitude: 121.749259"></a-entity>
+        <!--These are the non-fixed object version (object appears on screen, but can go off screen when camera moves)-->
+        <!--<a-entity gltf-model="#obsv" scale="0.23 0.23 0.23" rotation="0 90 0" position="0.35 0 -5"></a-entity>-->
+        <!--<a-entity gltf-model="#boat" scale="1.5 1.5 1.5" rotation="0 45 0" position="0.35 0 -5"></a-entity>-->
+        <!--<a-entity gltf-model="#mcd" scale="1 1 1" rotation="0 0 0" position="-2 0 -5"></a-entity>-->
+        <!--<a-entity gltf-model="#seamen" scale="0.5 0.5 0.5" rotation="0 -90 0" position="0 -5 -10"></a-entity>-->
+        <!--<a-entity gltf-model="#post" scale="0.5 0.5 0.5" rotation="0 -90 0" position="-7 -5 -20"></a-entity>-->
+        
+
+
+
+
 
     </a-scene>
-    
+
+
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
